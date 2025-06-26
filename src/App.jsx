@@ -1,14 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import './index.css'
+import HomePage from './pages/HomePage'
+import { Routes,Route } from 'react-router-dom';
+import RecipeDetailPage from './pages/RecipeDetailPage';
+import FavoritesPage from './pages/FavoritesPage';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="bg-muted text-white p-6 rounded-lg">
-      Hello World
-    </div>
+    <>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<HomePage />}></Route>
+      <Route path="/favorites" element={<FavoritesPage />} />
+      <Route path="/recipes/:id" element={<RecipeDetailPage />} />
+    </Routes>
+    </>
   );
 }
 
