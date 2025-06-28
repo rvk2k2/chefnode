@@ -5,7 +5,6 @@ const cors = require('cors');
 dotenv.config()
 const app = express();
 
-const userRoute = require("./routes/authRoutes")
 const {connectToMongoDb} = require('./connect')
 const authRouting = require('./routes/authRoutes')
 
@@ -22,10 +21,10 @@ app.use(cors());
 app.use(express.json());
 
 //Routing 
-app.use('api/auth', authRouting)
+app.use('/api/auth', authRouting)
 
 
-app.listen((PORT, ()=> console.log("server started on port:",PORT)))
+app.listen(PORT, ()=> console.log("server started on port:",PORT));
 
 
 
