@@ -4,7 +4,7 @@ const verifyToken =(req, res, next)=>{
 
     const authHeader = req.headers.authorization;
 
-    if(!authHeader || !authHeader.stringify('Bearer ')){
+    if(!authHeader || !authHeader.startsWith('Bearer ')){
         return  res.status(401).json({message: "Unauthorized"});
     }
 
@@ -21,4 +21,6 @@ const verifyToken =(req, res, next)=>{
 
 }
 
-module.exports = verifyToken;
+module.exports = {
+    verifyToken,
+}
