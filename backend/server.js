@@ -8,6 +8,7 @@ const app = express();
 const {connectToMongoDb} = require('./connect')
 const authRouting = require('./routes/authRoutes')
 const favRouting = require('./routes/favRoutes')
+const recipesRouting =require('./routes/recipeRoutes')
 
 const URI = process.env.MONGO_URI;
 const PORT = process.env.PORT || 5000
@@ -23,8 +24,8 @@ app.use(express.json());
 
 //Routing 
 app.use('/api/auth', authRouting);
-app.use('/api/favorites',favRouting)
-
+app.use('/api/favorites',favRouting);
+app.use('/api/recipes',recipesRouting);
 
 app.listen(PORT, ()=> console.log("server started on port:",PORT));
 
