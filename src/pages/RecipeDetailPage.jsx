@@ -31,7 +31,7 @@ const mockRecipes = [
 const RecipeDetailPage = ()=>{
 
     const {id} = useParams();
-   const {addToFav, removeFav, isFav} =useFavorites();
+   const {addToFavorites, removeFromFavorites, isFavorites} =useFavorites();
     
    const recipe = mockRecipes.find(rec => rec._id === id );
    
@@ -39,9 +39,9 @@ const RecipeDetailPage = ()=>{
     return <div className="p-6 text-red-500">Recipe not found.</div>;
   }
 
-    const favorited = isFav(recipe._id)
+    const favorited = isFavorites(recipe._id)
     const toggleFav= () =>{
-      favorited ? removeFav(recipe._id) : addToFav(recipe);   
+      favorited ? removeFromFavorites(recipe._id) : addToFavorites(recipe);   
     }
 
     return(
