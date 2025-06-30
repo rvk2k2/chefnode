@@ -7,4 +7,5 @@ const { handleRegister, handleLogIn} = require("../controllers/authControllers")
 router.post('/register', handleRegister);
 router.post('/login', handleLogIn);
 
+
 module.exports = router;
