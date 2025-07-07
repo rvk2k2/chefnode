@@ -42,7 +42,7 @@ const handleLogIn = async(req, res) =>{
        //genrate token 
        const token  = jwt.sign({id: user._id},process.env.JWT_SECRET,{ expiresIn: '2h' });
 
-         res.status(200).json({token , user: {id: user._id, userName: user.userName}});    
+         res.status(200).json({token , user: {id: user._id, userName: user.userName, email:user.email}});    
     }
     catch(err){
         res.status(500).json({message :"error from the server"})

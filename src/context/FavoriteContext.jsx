@@ -95,7 +95,7 @@ const removeFromFavorites = async (recipeId) => {
     console.log(" error message ", err);
   }
 };
-
+2
  
 const isFavorites = (recipeId) => favorites.some(recipe => recipe._id === recipeId);
 
