@@ -39,6 +39,14 @@ const Navbar = () => {
     Login
   </Link>
 )}
+
+{isLoggedIn && (
+  <Link to="/setting" className="text-sm text-gray-700 hover:underline">
+    Settings
+  </Link>
+)}
+
+
       </div>
     </nav>
   );

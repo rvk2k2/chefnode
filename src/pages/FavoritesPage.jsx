@@ -13,9 +13,11 @@ const FavoritesPage = ()=>{
         <p className="text-gray-500">You haven’t added any favorites yet.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {favorites.map((recipe) => (
-            <RecipeCard key={recipe._id} recipe={recipe} />
-          ))}
+          {favorites.map((recipe) =>
+  recipe && recipe._id ? (
+    <RecipeCard key={recipe._id} recipe={recipe} />
+  ) : null
+)}
         </div>
       )}
     </div>

@@ -8,6 +8,8 @@ import Navbar from './components/Navbar';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignupPage';
 import ProtectedRoute from './components/ProtectedRoute';
+import SettingsPage from './pages/SettingPage';
+
 function App() {
   return (
     <>
@@ -21,7 +23,12 @@ function App() {
       <Route path="/recipes/:id" element={<RecipeDetailPage />} />
       <Route path="/signup" element={<SignUpPage />}></Route>
       <Route path="/login" element={<LoginPage />}></Route>
-    </Routes>
+     <Route path='/setting' element={
+      <ProtectedRoute>
+        <SettingsPage />
+      </ProtectedRoute>
+     } />
+     </Routes>
     </>
   );
 }

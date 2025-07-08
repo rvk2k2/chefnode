@@ -10,12 +10,12 @@ const RecipeCard = ({ recipe }) => {
       className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer"
     >
       <img
-        src={recipe.thumbnailUrl}
-        alt={recipe.name}
+        src={recipe.foodImage}
+        alt={recipe.foodName}
         className="w-full h-48 object-cover"
       />
       <div className="p-4">
-        <h2 className="text-lg font-semibold mb-1">{recipe.name}</h2>
+        <h2 className="text-lg font-semibold mb-1">{recipe.foodName}</h2>
         <p className="text-sm text-gray-600">
           {recipe.rating ? `⭐ ${recipe.rating}` : 'No ratings yet'}
         </p>
