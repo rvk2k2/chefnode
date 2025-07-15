@@ -4,7 +4,6 @@ let User = require('../models/User');
 const handleFavDetails= async(req, res)=>{
     try{
           const user = await User.findById(req.user.id);
-          console.log(user.favorites)
           res.json(user.favorites || [])
     }
     catch(err){
